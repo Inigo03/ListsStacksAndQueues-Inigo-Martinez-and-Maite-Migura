@@ -10,6 +10,8 @@ namespace Common
         public IntArrayList(int n)
         {
             //TODO #1: initialize Values with an array of size n
+            int[] Values = new int[n];
+            NumElements = 0;
         }
         public string AsString()
         {
@@ -26,6 +28,7 @@ namespace Common
         public void Add(int value)
         {
             //TODO #2: add a new integer to the end of the list
+
         }
 
         public int Get(int index)

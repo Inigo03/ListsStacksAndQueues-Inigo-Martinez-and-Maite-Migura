@@ -107,16 +107,28 @@ namespace Common
 
                 if (node == First) 
                 {
-                    node.Next = First; 
+                    if (node.Next == null)
+                    {
+                        First = null;
+                        Last = null;
+                        numElements--;
+                    }
+                    else
+                    {
+                        First = node.Next;
+                        numElements--;
+                    }
                 }
                 else if (node == Last) 
                 {
                     Last = GetNode(index - 1);
                     Last.Next = null;
+                    numElements--;
                 }
                 else
                 {
                     node.Next = GetNode(index - 1).Next;
+                    numElements--;
                 }
             }
         }
