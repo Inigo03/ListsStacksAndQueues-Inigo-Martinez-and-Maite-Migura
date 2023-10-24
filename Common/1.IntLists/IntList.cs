@@ -17,7 +17,7 @@ namespace Common
     {
         IntListNode First = null;
         IntListNode Last = null;
-        int numElements = 0;
+        int NumElements = 0;
 
         //This method returns all the elements on the list as a string
         //Use it as an example on how to access all the elements on the list
@@ -47,7 +47,7 @@ namespace Common
             {
                 First = newNode;
                 Last = newNode;
-                numElements++;
+                NumElements++;
             }
             else
             {
@@ -57,7 +57,7 @@ namespace Common
                 }
                 refNode.Next = newNode;
                 Last = newNode;
-                numElements++;
+                NumElements++;
             }
         }
 
@@ -95,13 +95,13 @@ namespace Common
         public int Count()
         {
             //TODO #4: return the number of elements on the list
-            return numElements;
+            return NumElements;
         }
         
         public void Remove(int index)
         {
             //TODO #5: remove the element on the index-th position. Do nothing if position is out of bounds
-            if (index >= 0 || index <= numElements) 
+            if (index >= 0 || index <= NumElements) 
             { 
                 IntListNode node = GetNode(index);
 
@@ -111,24 +111,24 @@ namespace Common
                     {
                         First = null;
                         Last = null;
-                        numElements--;
+                        NumElements--;
                     }
                     else
                     {
                         First = node.Next;
-                        numElements--;
+                        NumElements--;
                     }
                 }
                 else if (node == Last) 
                 {
                     Last = GetNode(index - 1);
                     Last.Next = null;
-                    numElements--;
+                    NumElements--;
                 }
                 else
                 {
                     node.Next = GetNode(index - 1).Next;
-                    numElements--;
+                    NumElements--;
                 }
             }
         }
@@ -138,7 +138,7 @@ namespace Common
         {
             //TODO #6: remove all the elements on the list
             First = null;
-            numElements = 0;
+            NumElements = 0;
         }
     }
 }

@@ -42,7 +42,7 @@ namespace RunTestsConsoleApp
                 T value = pushPop.Pop();
 
                 if (!isQueue && !value.Equals(initialValues[initialValues.Length - i - 1])
-                || isQueue && !value.Equals(initialValues[0])
+                || isQueue && !value.Equals(initialValues[i])
                 )
                 {
                     Console.WriteLine($"ERROR. Pop() returned {value} instead of {initialValues[initialValues.Length - i - 1]}");
